@@ -1,0 +1,127 @@
+:root {
+  --bg-color: #0a0a0c;
+  --panel-bg: #16161a;
+  --snake-color: #00ff88;
+  --snake-head-color: #00ffaa;
+  --food-color: #ff3366;
+  --text-primary: #ffffff;
+  --text-secondary: #88888d;
+  --accent-glow: rgba(0, 255, 136, 0.4);
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.game-container {
+  position: relative;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.score { color: var(--snake-color); }
+.high-score { color: var(--text-secondary); }
+
+canvas {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #111114;
+  display: block;
+  border-radius: 8px;
+  image-rendering: pixelated;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay-content {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+  background: linear-gradient(45deg, var(--snake-color), #00d2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+button {
+  background: transparent;
+  border: 2px solid var(--snake-color);
+  color: var(--snake-color);
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.1);
+}
+
+button:hover {
+  background: var(--snake-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 20px var(--accent-glow);
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Snake</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="game-container">
+        <div class="score-board">
+          <div class="score">Score: <span id="current-score">0</span></div>
+          <div class="high-score">High Score: <span id="high-score">0</span></div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-content">
+            <h1 id="overlay-title">NEON SNAKE</h1>
+            <p id="overlay-message">Press Space to Start</p>
+            <button id="start-btn">START GAME</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
